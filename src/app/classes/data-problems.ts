@@ -1,0 +1,108 @@
+import { Problems } from './problems';
+
+export const PROBLEMS: Problems[] = [
+    {
+        'id': '1',
+        'titel': 'Fuge undicht',
+        'module': 'ABC',
+        'dates': '2017-04-19',
+        'status': '70%',
+        'kpi': 'Fuge',
+        'actions': ['edit', 'delete'],
+        'comments': ['Bitte überprüfen', 'Testen'],
+        'involvedPersons': ['Max Mustermann', 'Max Maier'],
+        'description': 'Fuge ist nicht dicht.',
+        'tags': ['wichtig', 'Noch diese Woche']
+    },
+    {
+        'id': '2',
+        'titel': 'Sporadisch hartes Bremspedal',
+        'module': 'ABC',
+        'dates': '2017-04-22',
+        'status': '30%',
+        'kpi': 'Bremspedal',
+        'actions': ['edit', 'delete'],
+        'comments': ['Bitte überprüfen'],
+        'involvedPersons': ['Heinz Müller'],
+        'description': 'Beim Bremsen fühlt es sich an, als ob ich keinen Bremsverstärker mehr hätte.',
+        'tags': ['Klärungsbedarf']
+    },
+    {
+        'id': '3',
+        'titel': 'Schiebedach gesprungen',
+        'module': 'CDE',
+        'dates': '2017-04-25',
+        'status': '10%',
+        'kpi': 'Schiebedach',
+        'actions': ['edit', 'delete'],
+        'comments': ['Bitte überprüfen'],
+        'involvedPersons': ['Max Maierr'],
+        'description': 'Während der Fahrt ist das Schiebedach gesprungen.',
+        'tags': ['Klärungsbedarf']
+    },
+    {
+        'id': '4',
+        'titel': 'Fahrgestellnummer in Motorraum',
+        'module': 'CDE',
+        'dates': '2017-04-25',
+        'status': '10%',
+        'kpi': '',
+        'actions': ['edit', 'delete'],
+        'comments': ['Bitte überprüfen'],
+        'involvedPersons': ['Max Maierr'],
+        'description': 'Fahrgestellnummer angelaufen.',
+        'tags': ['Klärungsbedarf']
+    },
+        {
+        'id': '5',
+        'titel': 'Fuge undicht',
+        'module': 'FEG',
+        'dates': '2017-04-19',
+        'status': '70%',
+        'kpi': 'Fuge',
+        'actions': ['edit', 'delete'],
+        'comments': ['Bitte überprüfen', 'Testen'],
+        'involvedPersons': ['Max Mustermann', 'Max Maier'],
+        'description': 'Fuge ist nicht dicht.',
+        'tags': ['wichtig', 'Noch diese Woche']
+    },
+    {
+        'id': '6',
+        'titel': 'Sporadisch hartes Bremspedal',
+        'module': 'FEG',
+        'dates': '2017-04-22',
+        'status': '30%',
+        'kpi': 'Bremspedal',
+        'actions': ['edit', 'delete'],
+        'comments': ['Bitte überprüfen'],
+        'involvedPersons': ['Heinz Müller'],
+        'description': 'Beim Bremsen fühlt es sich an, als ob ich keinen Bremsverstärker mehr hätte.',
+        'tags': ['Klärungsbedarf']
+    },
+    {
+        'id': '7',
+        'titel': 'Schiebedach gesprungen',
+        'module': 'IB03',
+        'dates': '2017-04-25',
+        'status': '10%',
+        'kpi': 'Schiebedach',
+        'actions': ['edit', 'delete'],
+        'comments': ['Bitte überprüfen'],
+        'involvedPersons': ['Max Maierr'],
+        'description': 'Während der Fahrt ist das Schiebedach gesprungen.',
+        'tags': ['Klärungsbedarf']
+    },
+    {
+        'id': '8',
+        'titel': 'Fahrgestellnummer in Motorraum',
+        'module': 'IB03',
+        'dates': '2017-04-25',
+        'status': '10%',
+        'kpi': '',
+        'actions': ['edit', 'delete'],
+        'comments': ['Bitte überprüfen'],
+        'involvedPersons': ['Max Maierr'],
+        'description': 'Fahrgestellnummer angelaufen.',
+        'tags': ['Klärungsbedarf']
+    },
+];

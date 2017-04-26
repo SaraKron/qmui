@@ -1,0 +1,73 @@
+<div class="row">
+    <button type="button" class="btn btn-default center-block" (click)="goToDetailPage(previewProblem)"> 
+            Detailansicht
+            <span class="glyphicon glyphicon-list-alt"></span>
+        </button>
+</div>
+
+<div class="row problem-preview--button-group">
+    <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-film"></span>
+            Präsentieren
+        </button>
+    <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-user"></span>
+            Einsteuern
+        </button>
+    <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-send"></span>
+            Weiterleiten
+        </button>
+</div>
+
+<div class="row">
+
+    <h2 class="col-md-12 page-header">
+        {{ previewProblem.titel }} {{ previewProblem.status }}
+    </h2>
+
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Modul
+            </div>
+            <div class="panel-body">
+                {{ previewProblem.module }}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 panel">
+        <div class="panel panel-default">
+            <div class="panel-heading">Beteiligte Personen</div>
+            <div *ngFor="let involvedPerson of previewProblem.involvedPersons" class="panel-body">
+                <span class="glyphicon glyphicon-user"></span>
+                <span>{{ involvedPerson }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Kommentare </div>
+            <div class="panel-body">
+                <div class="problem-preview--comment">
+                    <span class="glyphicon glyphicon-file"></span>
+                </div>
+                <div class="problem-preview--comment">
+                    <div *ngFor="let comment of previewProblem.comments">
+                        {{ comment }}
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <textarea class="form-control" rows="1" placeholder="Kommentar hinzufügen" #comment></textarea>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-send" (click)="addComment(previewProblem.id, comment.value)"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

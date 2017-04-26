@@ -1,0 +1,16 @@
+<div class="page-header col-md-12">
+    <h1>Admin</h1>
+    <p *ngIf="sessionId">Session ID: {{ sessionId }}</p>
+</div>
+
+<div class="col-md-12">
+    <ul class="nav nav-tabs">
+        <li role="presentation">
+            <a routerLink="masterData" [routerLinkActive]="['nav--active']">
+            Stammdaten
+        </a>
+        </li>
+    </ul>
+</div>
+
+<router-outlet></router-outlet>

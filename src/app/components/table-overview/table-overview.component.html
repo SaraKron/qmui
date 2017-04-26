@@ -1,0 +1,50 @@
+<div [ngClass]="{ 'col-md-8': isPreview }">
+
+    <table class="table table-striped">
+        <thead>
+            <th></th>
+            <th (click)="setSortType('titel')">
+                Titel
+                <span class="sortorder" [hidden]="sortType !== 'titel'" [ngClass]="{ 'reverse': reverse }"></span>
+            </th>
+            <th (click)="setSortType('module')">
+                Modul
+                <span class="sortorder" [hidden]="sortType !== 'module'" [ngClass]="{ 'reverse': reverse }"></span>
+            </th>
+            <th (click)="setSortType('dates')">
+                Termine
+                <span class="sortorder" [hidden]="sortType !== 'dates'" [ngClass]="{ 'reverse': reverse }"></span>
+            </th>
+            <th (click)="setSortType('status')">
+                Status
+                <span class="sortorder" [hidden]="sortType !== 'status'" [ngClass]="{ 'reverse': reverse }"></span>
+            </th>
+            <th (click)="setSortType('kpi')">
+                KPI
+                <span class="sortorder" [hidden]="sortType !== 'kpi'" [ngClass]="{ 'reverse': reverse }"></span>
+            </th>
+            <th (click)="setSortType('actions')">
+                Aktionen
+                <span class="sortorder" [hidden]="sortType !== 'actions'" [ngClass]="{ 'reverse': reverse }"></span>
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let problem of source | orderBy : [reverse ? sortType : '-' + sortType ] ">
+                <td><input type="checkbox" value="problem.id" (click)="showPreview(problem)" /></td>
+                <td (click)="goToDetailPage(problem)"><u>{{ problem.titel }}</u></td>
+                <td>{{ problem.module }}</td>
+                <td>{{ problem.dates }}</td>
+                <td>{{ problem.status }}</td>
+                <td>{{ problem.kpi }}</td>
+                <td>
+                    <span *ngFor="let action of problem.actions">
+                        <span class="glyphicon" [ngClass]="{ 'glyphicon-pencil': action === 'edit', 'glyphicon-trash': action === 'delete' }"></span>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="text" ng-model="search" />
+</div>
+
+<app-preview [previewProblem]="previewProblem" class="col-md-4 problem-preview" *ngIf="isPreview"></app-preview>

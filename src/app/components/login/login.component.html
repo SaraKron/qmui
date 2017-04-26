@@ -1,0 +1,10 @@
+<div class="page-header">
+    <h1>Login</h1>
+</div>
+<div class="alert" [ngClass]="{ 'alert-success' : authService.isLoggedIn, 'alert-info' : !authService.isLoggedIn }">
+    {{message}}
+</div>
+<p>
+    <button class="btn btn-default" (click)="login()" *ngIf="!authService.isLoggedIn">Login</button>
+    <button class="btn btn-default" (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+</p>

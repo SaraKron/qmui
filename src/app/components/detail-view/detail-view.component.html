@@ -1,0 +1,106 @@
+<div class="row">
+    <div class="page-header col-md-12">
+        <h1>Problem Details</h1>
+    </div>
+
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Problem suchen">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                </div>
+            </div>
+            <div class="row problem-preview--button-groupcol-md-6">
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-film"></span>
+                    Präsentieren
+                </button>
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-user"></span>
+                    Einsteuern
+                </button>
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-send"></span>
+                    Weiterleiten
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+
+        <div class="page-header">
+            <h2>{{ titel }}</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="http://placehold.it/300x75/D2DAE3" title="Placeholder" width="100%" />
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Termine </div>
+                    <div class="panel-body">
+                        {{ dates }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Aktueller Stand </div>
+                    <div class="panel-body">
+                        Status: {{ status }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Kommentare </div>
+                    <div class="panel-body">
+                        <div>
+                            <div *ngFor="let comment of comments">
+                                {{ comment }}
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <textarea class="form-control" rows="1" placeholder="Kommentar hinzufügen" #comment></textarea>
+                            <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-send" (click)="addComment(comment.value)"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Beschreibung</div>
+                    <div class="panel-body">
+                        {{ description }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Private Tags</div>
+                    <div class="panel-body">
+                        <span *ngFor="let tag of tags">
+                            <span class="detail-view--tags" appHighlightBackground highlightColor="gray">
+                                {{ tag }}
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
