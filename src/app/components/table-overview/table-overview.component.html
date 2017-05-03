@@ -1,4 +1,9 @@
-<div [ngClass]="{ 'col-md-8': isPreview }">
+<div [ngClass]="{ 'col-md-8': isPreview, 'col-md-12': !isPreview }">
+
+    <div class="input-group search-form">
+        <input type="text" class="form-control" placeholder="Search problem" #searchFilter (keyup)="0">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+    </div>
 
     <table class="table table-striped">
         <thead>
@@ -23,13 +28,12 @@
                 KPI
                 <span class="sortorder" [hidden]="sortType !== 'kpi'" [ngClass]="{ 'reverse': reverse }"></span>
             </th>
-            <th (click)="setSortType('actions')">
+            <th>
                 Aktionen
-                <span class="sortorder" [hidden]="sortType !== 'actions'" [ngClass]="{ 'reverse': reverse }"></span>
             </th>
         </thead>
         <tbody>
-            <tr *ngFor="let problem of source | orderBy : [reverse ? sortType : '-' + sortType ] ">
+            <tr *ngFor="let problem of source | orderBy : [reverse ? sortType : '-' + sortType ] | search: {titel: searchFilter.value} ">
                 <td><input type="checkbox" value="problem.id" (click)="showPreview(problem)" /></td>
                 <td (click)="goToDetailPage(problem)"><u>{{ problem.titel }}</u></td>
                 <td>{{ problem.module }}</td>
@@ -44,7 +48,6 @@
             </tr>
         </tbody>
     </table>
-    <input type="text" ng-model="search" />
 </div>
 
 <app-preview [previewProblem]="previewProblem" class="col-md-4 problem-preview" *ngIf="isPreview"></app-preview>

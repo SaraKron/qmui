@@ -19,7 +19,7 @@ export class OrderByPipe implements PipeTransform {
       if (parseFloat(a) < parseFloat(b)) {
         return -1;
       }
-      if (parseFloat(a) > parseFloat(b)) { 
+      if (parseFloat(a) > parseFloat(b)) {
         return 1;
       }
     }

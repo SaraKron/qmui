@@ -6,6 +6,7 @@ import { TableOverviewComponent } from '../../components/table-overview/table-ov
 import { PreviewComponent } from '../../components/preview/preview.component';
 
 import { OrderByPipe } from '../../filters/order-by.pipe';
+import { SearchPipe } from '../../filters/search.pipe';
 
 import { ProblemOverviewRoutingModule } from './problem-overview-routing.module';
 
@@ -18,7 +19,8 @@ import { ProblemOverviewRoutingModule } from './problem-overview-routing.module'
     OverviewComponent,
     TableOverviewComponent,
     PreviewComponent,
-    OrderByPipe
+    OrderByPipe,
+    SearchPipe
   ]
 })
 export class ProblemOverviewModule { }
